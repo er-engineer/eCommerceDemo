@@ -45,15 +45,6 @@ public class Main {
 			
 			userService.externalLogIn(googleUser1);
 			
-			System.out.println("---------------");
-			//Before registration
-			for(User registeredUser : registeredUsers) {
-				System.out.println(registeredUser.getName() + ", " +
-									registeredUser.getSurname() + ", " +
-									registeredUser.getMailAddress());
-			}
-			System.out.println("---------------");
-			
 			userService.register(newUser1, registeredUsers);
 			userService.register(newUser2, registeredUsers);
 			userService.register(newUser3, registeredUsers);

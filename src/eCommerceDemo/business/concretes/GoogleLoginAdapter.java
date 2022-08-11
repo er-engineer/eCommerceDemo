@@ -11,10 +11,15 @@ public class GoogleLoginAdapter implements ExternalLogInService {
 	@Override
 	public boolean logIn(User user) {
 		GoogleLogIn googleLogIn = new GoogleLogIn();
-		System.out.println("Externally logged in. (Google): " + user.getName() + " " + user.getSurname());
-		return googleLogIn.logIn();
-		
-	}
+		if(googleLogIn.logIn()) {
+			System.out.println("Externally logged in. (Google): " + user.getName() + " " + user.getSurname());
+			return true;
+		}
+			
+		else
+			System.out.println("Something went wrong while logging in via Google: " + user.getName() + " " + user.getSurname());
+		return false;
 	
+	}
 	
 }
